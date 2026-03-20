@@ -1,0 +1,28 @@
+@use '../../styles/tokens' as *;
+
+.agenda-list {
+  padding-left: $spacing-lg;
+
+  &__item {
+    margin-bottom: $spacing-md;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__title {
+    font-size: $font-size-md;
+
+    a {
+      color: $color-primary;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+  }
+}

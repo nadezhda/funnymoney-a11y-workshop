@@ -1,0 +1,108 @@
+// ======================
+// Theme Tokens
+// ======================
+// Change these to rebrand for a different customer.
+// All colors, spacing, typography, and focus styles
+// flow from these variables.
+
+// --- Colors ---
+
+// Primary: Mint Teal
+$color-primary: #0d7377;
+$color-primary-dark: #095456;
+$color-primary-light: #e0f5f5;
+
+// Accent: Gold
+$color-accent: #89681c;
+$color-accent-dark: #6b5015;
+$color-accent-light: #fdf3e0;
+
+// Neutrals
+$color-white: #ffffff;
+$color-gray-50: #f8f9fa;
+$color-gray-100: #e9ecef;
+$color-gray-200: #dee2e6;
+$color-gray-300: #ced4da;
+$color-gray-400: #adb5bd;
+$color-gray-500: #6c757d;
+$color-gray-600: #495057;
+$color-gray-700: #343a40;
+$color-gray-800: #212529;
+$color-black: #000000;
+
+// Semantic
+$color-text: $color-gray-800;
+$color-text-light: $color-gray-600;
+$color-background: $color-white;
+$color-surface: $color-gray-50;
+$color-border: $color-gray-200;
+
+// Feedback
+$color-error: #c0392b;
+$color-error-light: #fdecea;
+$color-success: #1e7e34;
+$color-success-light: #e8f5e9;
+$color-warning: #c6922a;
+$color-warning-light: #fdf3e0;
+$color-info: #0d7377;
+$color-info-light: #e0f5f5;
+
+// --- Focus ---
+$focus-outline-color: $color-gray-800;
+$focus-outline-width: 3px;
+$focus-outline-offset: 2px;
+
+// Bad focus (intentional demo — poor contrast)
+$focus-outline-bad-color: $color-gray-300;
+
+// --- Typography ---
+$font-family-base: 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-family-mono: 'Consolas', 'Monaco', monospace;
+
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-md: 1.125rem; // 18px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-2xl: 2rem; // 32px
+$font-size-3xl: 2.5rem; // 40px
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.25;
+$line-height-base: 1.5;
+$line-height-relaxed: 1.75;
+
+// --- Spacing ---
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-2xl: 3rem; // 48px
+$spacing-3xl: 4rem; // 64px
+
+// --- Border Radius ---
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-full: 9999px;
+
+// --- Shadows ---
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.16);
+
+// --- Breakpoints ---
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// --- Layout ---
+$max-width-content: 1200px;
+$header-height: 4rem;

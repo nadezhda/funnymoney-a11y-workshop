@@ -1,0 +1,7 @@
+@use '../../styles/tokens' as *;
+
+.persona-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-lg;
+}

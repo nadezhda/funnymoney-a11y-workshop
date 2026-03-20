@@ -1,0 +1,90 @@
+@use '../../styles/tokens' as *;
+
+.persona-card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-md;
+  }
+
+  &__header-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__image {
+    width: 120px;
+    height: 120px;
+    border-radius: $radius-full;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: $font-size-xl;
+    color: $color-primary;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__disability {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__summary {
+    margin-bottom: $spacing-md;
+  }
+
+  &__tools {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+  }
+
+  &__section {
+    margin-top: $spacing-md;
+
+    h4 {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-xs;
+      color: $color-primary-dark;
+    }
+
+    ul {
+      padding-left: $spacing-lg;
+    }
+
+    li {
+      font-size: $font-size-sm;
+    }
+  }
+
+  // Compact variant
+  &--compact {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-lg;
+
+    .persona-card__body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .persona-card__image {
+      width: 100px;
+      height: 100px;
+    }
+
+    .persona-card__name {
+      font-size: $font-size-lg;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../styles/tokens' as *;
+
+.card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+
+  &--success {
+    border-left: 4px solid $color-success;
+  }
+
+  &--error {
+    border-left: 4px solid $color-error;
+  }
+}

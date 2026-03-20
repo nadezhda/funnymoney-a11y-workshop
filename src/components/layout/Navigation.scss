@@ -1,0 +1,43 @@
+@use '../../styles/tokens' as *;
+
+.main-nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin-bottom: 0;
+  }
+
+  &__link {
+    display: block;
+    padding: $spacing-sm $spacing-md;
+    color: $color-white;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: $color-white;
+    }
+
+    &--active {
+      background-color: rgba(255, 255, 255, 0.2);
+      font-weight: $font-weight-semibold;
+    }
+
+    &:focus-visible {
+      outline-color: $color-white;
+    }
+  }
+}

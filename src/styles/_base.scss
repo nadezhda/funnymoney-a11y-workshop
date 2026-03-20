@@ -1,0 +1,112 @@
+@use 'tokens' as *;
+
+// ======================
+// Base / Reset
+// ======================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; // 16px — respect user's browser settings
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text;
+  background-color: $color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// --- Focus styles ---
+// Visible, high-contrast focus for all interactive elements
+
+:focus-visible {
+  outline: $focus-outline-width solid $focus-outline-color;
+  outline-offset: $focus-outline-offset;
+}
+
+// Remove default outline for mouse users
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// --- Typography defaults ---
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text;
+}
+
+h1 {
+  font-size: $font-size-3xl;
+}
+
+h2 {
+  font-size: $font-size-2xl;
+}
+
+h3 {
+  font-size: $font-size-xl;
+}
+
+h4 {
+  font-size: $font-size-lg;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+// --- Lists ---
+
+ul,
+ol {
+  padding-left: $spacing-lg;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// --- Images ---
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// --- Code ---
+
+code {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  background-color: $color-surface;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-sm;
+}

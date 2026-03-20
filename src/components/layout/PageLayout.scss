@@ -1,0 +1,17 @@
+@use '../../styles/tokens' as *;
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    flex: 1;
+    padding: $spacing-2xl $spacing-lg;
+  }
+
+  &__content {
+    max-width: $max-width-content;
+    margin: 0 auto;
+  }
+}

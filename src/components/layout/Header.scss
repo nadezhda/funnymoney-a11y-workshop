@@ -1,0 +1,34 @@
+@use '../../styles/tokens' as *;
+
+.header {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: $spacing-md $spacing-lg;
+
+  &__inner {
+    max-width: $max-width-content;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &__brand {
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &:focus-visible {
+      outline-color: $color-white;
+    }
+  }
+
+  &__bank-name {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+}

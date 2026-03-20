@@ -1,0 +1,19 @@
+@use '../../styles/tokens' as *;
+
+.footer {
+  background-color: $color-gray-800;
+  color: $color-gray-300;
+  padding: $spacing-lg;
+  margin-top: auto;
+
+  &__inner {
+    max-width: $max-width-content;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__copyright {
+    font-size: $font-size-sm;
+    margin-bottom: 0;
+  }
+}

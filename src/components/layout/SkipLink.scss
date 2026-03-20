@@ -1,0 +1,19 @@
+@use '../../styles/tokens' as *;
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $spacing-md;
+  z-index: 1000;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-gray-800;
+  color: $color-white;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  border-radius: 0 0 $radius-md $radius-md;
+  transition: top 0.2s;
+
+  &:focus {
+    top: 0;
+  }
+}

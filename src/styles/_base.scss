@@ -27,6 +27,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// --- Inherit font on form elements ---
+// Browsers don't inherit font-family on form controls by default
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 // --- Focus styles ---
 // Visible, high-contrast focus for all interactive elements
 

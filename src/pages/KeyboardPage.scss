@@ -1,0 +1,335 @@
+@use '../styles/tokens' as *;
+
+.keyboard-page {
+  h1 {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__intro {
+    margin-bottom: $spacing-2xl;
+    max-width: 48rem;
+  }
+
+  &__section {
+    margin-bottom: $spacing-3xl;
+
+    h2 {
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__tip {
+    background-color: $color-info-light;
+    border-left: 4px solid $color-info;
+    padding: $spacing-md $spacing-lg;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    margin-top: $spacing-lg;
+
+    code {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  // --- Focus demo ---
+  &__focus-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    align-items: center;
+  }
+
+  &__btn-bad-focus,
+  &__link-bad-focus {
+    &:focus-visible {
+      outline: 2px solid $focus-outline-bad-color;
+      outline-offset: 2px;
+    }
+  }
+
+  &__btn-bad-focus {
+    padding: $spacing-sm $spacing-lg;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: $font-size-base;
+  }
+
+  &__link-bad-focus {
+    color: $color-primary;
+  }
+
+  &__btn-good-focus {
+    padding: $spacing-sm $spacing-lg;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: $font-size-base;
+  }
+
+  &__link-good-focus {
+    color: $color-primary;
+  }
+
+  // --- Mouse-only demo ---
+  &__mouse-only-demo {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__fake-button {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    background-color: $color-accent;
+    color: $color-white;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: $font-size-base;
+    text-align: center;
+    max-width: fit-content;
+    user-select: none;
+  }
+
+  &__real-button {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    background-color: $color-accent;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: $font-size-base;
+    max-width: fit-content;
+  }
+
+  &__hint {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: 0;
+  }
+
+  // --- Key reference ---
+  &__key-reference {
+    background-color: $color-surface;
+    padding: $spacing-md $spacing-lg;
+    border-radius: $radius-md;
+    margin-bottom: $spacing-xl;
+
+    h3 {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-sm;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      font-size: $font-size-sm;
+    }
+  }
+
+  // --- Form ---
+  &__form {
+    max-width: 32rem;
+    margin-top: $spacing-lg;
+  }
+
+  &__field {
+    margin-bottom: $spacing-lg;
+
+    label {
+      display: block;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-xs;
+    }
+
+    input[type='text'],
+    select {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base;
+      border: 1px solid $color-gray-300;
+      border-radius: $radius-sm;
+      background-color: $color-white;
+      color: $color-text;
+      font-family: $font-family-base;
+
+      &:focus-visible {
+        outline: $focus-outline-width solid $focus-outline-color;
+        outline-offset: $focus-outline-offset;
+      }
+    }
+  }
+
+  &__fieldset {
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+
+    legend {
+      font-weight: $font-weight-semibold;
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  &__radio-group,
+  &__checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-top: $spacing-sm;
+  }
+
+  &__radio-label,
+  &__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+    font-size: $font-size-base;
+
+    input {
+      width: 1.125rem;
+      height: 1.125rem;
+      cursor: pointer;
+    }
+  }
+
+  &__submit {
+    padding: $spacing-sm $spacing-xl;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    margin-top: $spacing-sm;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &__success {
+    color: $color-success;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-md;
+  }
+
+  // --- Disclosure ---
+  &__disclosure {
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    max-width: 32rem;
+  }
+
+  &__disclosure-trigger {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    width: 100%;
+    padding: $spacing-md $spacing-lg;
+    background-color: $color-surface;
+    border: none;
+    cursor: pointer;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    text-align: left;
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+  }
+
+  &__disclosure-icon {
+    font-size: $font-size-sm;
+    flex-shrink: 0;
+  }
+
+  &__disclosure-content {
+    padding: $spacing-md $spacing-lg;
+    border-top: 1px solid $color-border;
+
+    p {
+      margin-bottom: $spacing-md;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  // --- Checklist ---
+  &__checklist {
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // --- Focus trap demo ---
+  &__trap-demo {
+    position: relative;
+  }
+
+  &__modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+
+  &__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    border-radius: $radius-md;
+    padding: $spacing-xl;
+    max-width: 28rem;
+    width: 90%;
+    z-index: 101;
+    box-shadow: $shadow-lg;
+
+    h3 {
+      margin-bottom: $spacing-md;
+    }
+
+    &--trapped {
+      border: 3px solid $color-error;
+    }
+  }
+
+  &__modal-actions {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+  }
+
+  &__trap-warning {
+    font-size: $font-size-sm;
+    color: $color-error;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+// --- Keyboard utility ---
+kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  background-color: $color-gray-100;
+  border: 1px solid $color-gray-300;
+  border-radius: $radius-sm;
+  box-shadow: 0 1px 0 $color-gray-300;
+}

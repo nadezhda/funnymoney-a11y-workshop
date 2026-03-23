@@ -1,3 +1,11 @@
+import type { WcagCriterion } from '../components/workshop';
+
+type WcagLevel = WcagCriterion['level'];
+
+function wcag(id: string, name: string, level: WcagLevel): WcagCriterion {
+  return { id, name, level };
+}
+
 export const keyboardContent = {
   title: 'Keyboard Accessibility',
   intro:
@@ -36,6 +44,7 @@ export const keyboardContent = {
       description:
         'A skip link allows keyboard users to bypass repetitive navigation and jump directly to the main content. Press Tab on this page to see the skip link appear at the top.',
       tip: 'Click the browser address bar and press Tab. The skip link "Skip to main content" should appear.',
+      wcag: [wcag('2.4.1', 'Bypass Blocks', 'A')],
     },
 
     focusVisibility: {
@@ -47,6 +56,11 @@ export const keyboardContent = {
         'The focus outline is too faint to see against the background. A user tabbing through the page would lose track of where they are.',
       correctExplanation:
         'The focus outline has strong contrast and is clearly visible. Keyboard users can always see which element is focused.',
+      wcag: [
+        wcag('2.4.7', 'Focus Visible', 'AA'),
+        wcag('2.4.11', 'Focus Not Obscured (Minimum)', 'AA'),
+        wcag('2.4.13', 'Focus Appearance', 'AAA'),
+      ],
     },
 
     mouseOnly: {
@@ -59,6 +73,7 @@ export const keyboardContent = {
         'This is a <div> styled to look like a button. It has no tabIndex, no role, and no keyboard event handler. Keyboard users cannot reach or activate it.',
       correctExplanation:
         'This is a native <button> element which is focusable and can be activated by keyboard (Enter or Space) without additional code.',
+      wcag: [wcag('2.1.1', 'Keyboard', 'A')],
     },
 
     form: {
@@ -108,6 +123,7 @@ export const keyboardContent = {
       },
       submitLabel: 'Open Account',
       successMessage: 'Form submitted successfully!',
+      wcag: [wcag('2.1.1', 'Keyboard', 'A')],
     },
 
     disclosure: {
@@ -124,6 +140,10 @@ export const keyboardContent = {
         'Review your recent login activity regularly',
       ],
       tip: 'The button uses aria-expanded to communicate its state and aria-controls to link to the content it reveals. Because it is a native <button>, it responds to Enter and Space automatically.',
+      wcag: [
+        wcag('2.1.1', 'Keyboard', 'A'),
+        wcag('4.1.2', 'Name, Role, Value', 'A'),
+      ],
     },
 
     focusTrap: {
@@ -146,6 +166,7 @@ export const keyboardContent = {
       correctExplanation:
         'This modal traps focus within itself (good), but provides Escape and a visible Close button to exit. Focus returns to the trigger button when closed.',
       tip: 'A focus trap is only acceptable inside a modal dialog, and only if the user can always exit with Escape. Focus must return to the element that opened the dialog.',
+      wcag: [wcag('2.1.2', 'No Keyboard Trap', 'A')],
     },
 
     nonInteractiveFocus: {
@@ -156,6 +177,7 @@ export const keyboardContent = {
         'These non-interactive elements have tabindex="0", making them part of the focus order. Keyboard users must navigate through them to reach the actual interactive elements below. It is not expected behavior and can be confusing.',
       correctExplanation:
         'Only the interactive elements should be in focus order. Non-interactive text is read naturally by screen readers in browse mode without needing focus.',
+      wcag: [],
     },
   },
 };

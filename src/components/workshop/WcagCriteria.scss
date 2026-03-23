@@ -1,0 +1,30 @@
+@use '../../styles/tokens' as *;
+
+.wcag-criteria {
+  margin-top: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-surface;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+
+  &__label {
+    color: $color-text;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs $spacing-lg;
+    list-style: none;
+    padding: 0;
+    margin: $spacing-xs 0 0 0;
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      font-size: $font-size-sm;
+    }
+  }
+}

@@ -25,7 +25,7 @@ export function ExamplePair({
 }: ExamplePairProps) {
   return (
     <div className="example-pair">
-      <h3 className="example-pair__title">{title}</h3>
+      {title && <h3 className="example-pair__title">{title}</h3>}
       {description && <p className="example-pair__description">{description}</p>}
 
       <div className="example-pair__grid">

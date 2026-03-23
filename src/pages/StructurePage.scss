@@ -1,0 +1,253 @@
+@use '../styles/tokens' as *;
+
+.structure-page {
+  &__intro {
+    font-size: $font-size-md;
+    margin-bottom: $spacing-2xl;
+    max-width: 48rem;
+  }
+
+  &__section {
+    margin-bottom: $spacing-3xl;
+
+    h2 {
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+
+    h3 {
+      margin-top: $spacing-xl;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__tip {
+    background-color: $color-info-light;
+    border-left: 4px solid $color-info;
+    padding: $spacing-md $spacing-lg;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    margin-top: $spacing-lg;
+
+    code {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  // --- Code example ---
+  &__code-example {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-lg;
+
+    h3 {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-md;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 0;
+    }
+
+    code {
+      display: block;
+      font-family: $font-family-mono;
+      font-size: $font-size-sm;
+      line-height: $line-height-relaxed;
+      background: none;
+      padding: 0;
+    }
+  }
+
+  // --- Heading demo ---
+  // Normalize p, h3, h4 so incorrect (<p>) and correct (<h3>/<h4>) look identical
+  &__heading-demo {
+    p,
+    h3,
+    h4 {
+      margin: 0 0 $spacing-sm 0;
+      padding: 0;
+      font-weight: $font-weight-normal;
+      line-height: $line-height-base;
+      color: $color-text;
+      font-size: $font-size-base;
+    }
+  }
+
+  &__demo-h1 {
+    font-size: $font-size-2xl !important;
+    font-weight: $font-weight-bold !important;
+  }
+
+  &__demo-h2 {
+    font-size: $font-size-xl !important;
+    font-weight: $font-weight-bold !important;
+  }
+
+  // --- Alt text demos ---
+  &__alt-demos {
+    h3 {
+      margin-bottom: $spacing-md;
+      margin-top: $spacing-xl;
+    }
+  }
+
+  &__img-demo {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    img {
+      border-radius: $radius-sm;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  // --- Landmark demo ---
+  &__secondary-nav {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-md $spacing-lg;
+    margin-top: $spacing-md;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-sm $spacing-lg;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      font-size: $font-size-sm;
+    }
+  }
+
+  // --- Accordion ---
+  &__accordion {
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    max-width: 40rem;
+  }
+
+  &__accordion-item {
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: $font-size-base;
+    }
+  }
+
+  &__accordion-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: $spacing-md $spacing-lg;
+    background-color: $color-white;
+    border: none;
+    cursor: pointer;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    text-align: left;
+
+    &:hover {
+      background-color: $color-surface;
+    }
+
+    &[aria-expanded='true'] {
+      background-color: $color-surface;
+    }
+  }
+
+  &__accordion-icon {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    flex-shrink: 0;
+    width: 1.5rem;
+    text-align: center;
+  }
+
+  &__accordion-panel {
+    padding: $spacing-md $spacing-lg;
+    border-top: 1px solid $color-border;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  // --- Login form ---
+  &__login-form {
+    max-width: 24rem;
+    margin-top: $spacing-lg;
+  }
+
+  &__field {
+    margin-bottom: $spacing-lg;
+
+    label {
+      display: block;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-xs;
+
+      span {
+        color: $color-error;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base;
+      border: 1px solid $color-gray-300;
+      border-radius: $radius-sm;
+      font-family: $font-family-base;
+    }
+  }
+
+  &__field-hint {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-top: $spacing-xs;
+  }
+
+  &__login-submit {
+    padding: $spacing-sm $spacing-xl;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  // --- Checklist ---
+  &__checklist {
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import './ExamplePair.scss';
 interface ExamplePairProps {
   title: string;
   description?: string;
+  extra?: ReactNode;
   incorrectLabel?: string;
   correctLabel?: string;
   incorrectExample: ReactNode;
@@ -16,6 +17,7 @@ interface ExamplePairProps {
 export function ExamplePair({
   title,
   description,
+  extra,
   incorrectLabel = 'Incorrect',
   correctLabel = 'Correct',
   incorrectExample,
@@ -27,6 +29,7 @@ export function ExamplePair({
     <div className="example-pair">
       {title && <h3 className="example-pair__title">{title}</h3>}
       {description && <p className="example-pair__description">{description}</p>}
+      {extra}
 
       <div className="example-pair__grid">
         <Card variant="error">

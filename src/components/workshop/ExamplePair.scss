@@ -13,13 +13,10 @@
   }
 
   &__grid {
+    margin-top: $spacing-lg;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     gap: $spacing-lg;
-
-    @media (max-width: $breakpoint-md) {
-      grid-template-columns: 1fr;
-    }
   }
 
   &__label {

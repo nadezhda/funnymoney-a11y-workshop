@@ -20,7 +20,8 @@ export const agendaItems: AgendaItem[] = [
   {
     id: 'structure',
     title: 'Document Structure',
-    description: 'Page title, headings, landmarks, semantic HTML, images and alt text',
+    description:
+      'Page title, headings, landmarks, semantic HTML, images and alt text',
     path: '/structure',
   },
   {
@@ -31,7 +32,7 @@ export const agendaItems: AgendaItem[] = [
   },
   {
     id: 'zoom',
-    title: 'Zoom & Reflow',
+    title: ' Zoom & Reflow Testing',
     description: '200% text resize, 400% zoom, horizontal scrolling',
     path: '/zoom',
   },

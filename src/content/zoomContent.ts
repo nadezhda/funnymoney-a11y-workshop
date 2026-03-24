@@ -7,7 +7,7 @@ function wcag(id: string, name: string, level: WcagLevel): WcagCriterion {
 }
 
 export const zoomContent = {
-  title: 'Zoom & Reflow',
+  title: 'Zoom & Reflow Testing',
   intro:
     'Users with low vision may use assistive magnification software, browser zoom, operating system zoom, or larger text settings. Content must stay readable and usable at 200% text resize and 400% browser zoom, without horizontal scrolling or overlapping elements.',
   personaIds: ['oliver', 'patrik'],

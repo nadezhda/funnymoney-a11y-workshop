@@ -1,10 +1,12 @@
 @use '../styles/tokens' as *;
 
 .structure-page {
+  h1 {
+    margin-bottom: $spacing-lg;
+  }
+
   &__intro {
-    font-size: $font-size-md;
     margin-bottom: $spacing-2xl;
-    max-width: 48rem;
   }
 
   &__section {

@@ -3,6 +3,7 @@ import {
   ExamplePair,
   PersonaList,
   TestChecklist,
+  WcagCriteria,
 } from '../components/workshop';
 import { keyboardContent as content } from '../content/keyboardContent';
 import './KeyboardPage.scss';
@@ -115,6 +116,7 @@ export function KeyboardPage() {
         <div className="keyboard-page__tip">
           <strong>Try it:</strong> {sections.skipLink.tip}
         </div>
+        <WcagCriteria criteria={sections.skipLink.wcag} />
       </section>
 
       {/* Focus Visibility */}
@@ -155,6 +157,7 @@ export function KeyboardPage() {
           incorrectExplanation={sections.focusVisibility.incorrectExplanation}
           correctExplanation={sections.focusVisibility.correctExplanation}
         />
+        <WcagCriteria criteria={sections.focusVisibility.wcag} />
       </section>
 
       {/* Mouse-Only Element */}
@@ -190,6 +193,7 @@ export function KeyboardPage() {
           incorrectExplanation={sections.mouseOnly.incorrectExplanation}
           correctExplanation={sections.mouseOnly.correctExplanation}
         />
+        <WcagCriteria criteria={sections.mouseOnly.wcag} />
       </section>
 
       {/* Form Demo */}
@@ -309,6 +313,7 @@ export function KeyboardPage() {
             </p>
           )}
         </form>
+        <WcagCriteria criteria={sections.form.wcag} />
       </section>
 
       {/* Disclosure Widget */}
@@ -349,6 +354,7 @@ export function KeyboardPage() {
         <div className="keyboard-page__tip">
           <strong>How it works:</strong> {sections.disclosure.tip}
         </div>
+        <WcagCriteria criteria={sections.disclosure.wcag} />
       </section>
 
       {/* Focus Trap Demo */}
@@ -448,6 +454,7 @@ export function KeyboardPage() {
         <div className="keyboard-page__tip">
           <strong>Remember:</strong> {sections.focusTrap.tip}
         </div>
+        <WcagCriteria criteria={sections.focusTrap.wcag} />
       </section>
 
       {/* Non-interactive Focus Demo */}
@@ -496,6 +503,7 @@ export function KeyboardPage() {
           }
           correctExplanation={sections.nonInteractiveFocus.correctExplanation}
         />
+        <WcagCriteria criteria={sections.nonInteractiveFocus.wcag} />
       </section>
     </div>
   );

@@ -1,0 +1,135 @@
+@use '../styles/tokens' as *;
+
+.zoom-page {
+  h1 {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__intro {
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__section {
+    margin-bottom: $spacing-3xl;
+
+    h2 {
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+
+    h3 {
+      margin-top: $spacing-xl;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__tip {
+    background-color: $color-info-light;
+    border-left: 4px solid $color-info;
+    padding: $spacing-md $spacing-lg;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    margin-top: $spacing-lg;
+  }
+
+  // --- Text demo ---
+  &__text-demo {
+    p {
+      margin-bottom: $spacing-sm;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // --- Reflow demos ---
+  &__reflow-bad {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  &__reflow-bad &__reflow-card {
+    flex-shrink: 0;
+    min-width: 8rem;
+  }
+
+  &__reflow-good {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));
+    gap: $spacing-sm;
+  }
+
+  &__reflow-card {
+    background-color: $color-primary-light;
+    padding: $spacing-md;
+    border-radius: $radius-sm;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    text-align: center;
+  }
+
+  // --- Target size demos ---
+  &__targets-bad {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__icon-btn-small {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 12px;
+    font-family: serif;
+    line-height: 1;
+    border: 1px solid $color-gray-300;
+    border-radius: 2px;
+    background-color: $color-white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text;
+    margin-right: -6px;
+
+    &:hover {
+      background-color: $color-surface;
+    }
+  }
+
+  &__targets-good {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  &__icon-btn-large {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    padding: 0;
+    font-size: $font-size-lg;
+    font-family: serif;
+    line-height: 1;
+    border: 1px solid $color-gray-300;
+    border-radius: 2px;
+    background-color: $color-white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text;
+
+    &:hover {
+      background-color: $color-surface;
+    }
+  }
+
+  // --- Checklist ---
+  &__checklist {
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+}

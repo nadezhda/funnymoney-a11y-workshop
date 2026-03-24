@@ -32,7 +32,7 @@
     }
 
     &--active {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: $color-primary-dark;
       font-weight: $font-weight-semibold;
     }
 

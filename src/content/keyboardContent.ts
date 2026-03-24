@@ -7,7 +7,7 @@ function wcag(id: string, name: string, level: WcagLevel): WcagCriterion {
 }
 
 export const keyboardContent = {
-  title: 'Keyboard Accessibility',
+  title: 'Keyboard Accessibility Testing',
   intro:
     'Keyboard accessibility ensures that all users can navigate and interact with your application using only a keyboard.',
   introWhy: 'Keyboard accessibility is important for:',

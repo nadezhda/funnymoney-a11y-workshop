@@ -1,0 +1,241 @@
+@use '../styles/tokens' as *;
+
+.exercise-page {
+  h1 {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__instructions {
+    margin-bottom: $spacing-xl;
+    padding-left: $spacing-xl;
+
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // --- Hints ---
+  &__hints {
+    background-color: $color-info-light;
+    border: 1px solid $color-info;
+    border-radius: $radius-md;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-2xl;
+
+    > h3 {
+      margin-bottom: $spacing-sm;
+    }
+
+    > p {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__hint-group {
+    margin-bottom: $spacing-sm;
+
+    summary {
+      cursor: pointer;
+      font-weight: $font-weight-semibold;
+      padding: $spacing-xs 0;
+    }
+
+    ul {
+      padding-left: $spacing-xl;
+      margin-top: $spacing-xs;
+    }
+
+    li {
+      margin-bottom: $spacing-xs;
+      font-size: $font-size-sm;
+    }
+  }
+
+  // --- Dashboard ---
+  &__dashboard {
+    margin-top: $spacing-xl;
+
+    > h3 {
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  &__accounts,
+  &__actions,
+  &__notifications,
+  &__promotion,
+  &__activity,
+  &__transfer {
+    margin-bottom: $spacing-2xl;
+
+    > h4 {
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  // --- Table ---
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+
+    th,
+    td {
+      text-align: left;
+      padding: $spacing-sm $spacing-md;
+      border-bottom: 1px solid $color-border;
+    }
+
+    th {
+      background-color: $color-surface;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &__status {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+
+    &--active {
+      color: $color-success;
+    }
+
+    &--pending {
+      color: $color-accent;
+    }
+  }
+
+  // --- Quick actions — BUG: divs styled as buttons, no focus styles ---
+  &__action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  &__action-btn {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+
+    // BUG: no focus-visible styles
+  }
+
+  // --- Notifications ---
+  &__notifications {
+    ul {
+      padding-left: $spacing-lg;
+    }
+
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // --- Promotion — BUG: fixed width causes horizontal scroll at high zoom ---
+  &__promotion-card {
+    display: flex;
+    gap: $spacing-lg;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-lg;
+    // BUG: fixed width that doesn't reflow
+    width: 700px;
+  }
+
+  &__promotion-img {
+    border-radius: $radius-sm;
+    flex-shrink: 0;
+  }
+
+  &__promotion-content {
+    p {
+      margin-bottom: $spacing-md;
+      // BUG: font-size in px, won't resize with browser font settings
+      font-size: 14px;
+    }
+  }
+
+  // --- Transfer form ---
+  &__transfer {
+    max-width: 28rem;
+  }
+
+  &__field {
+    margin-bottom: $spacing-md;
+
+    input {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base;
+      border: 1px solid $color-gray-300;
+      border-radius: $radius-sm;
+      font-family: $font-family-base;
+
+      // BUG: focus outline removed
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__field-error {
+    color: $color-error;
+    font-size: $font-size-sm;
+    margin-top: $spacing-xs;
+  }
+
+  &__error-list {
+    background-color: $color-error-light;
+    border: 1px solid $color-error;
+    border-radius: $radius-sm;
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $color-error;
+    }
+  }
+
+  &__success {
+    background-color: $color-success-light;
+    border: 1px solid $color-success;
+    border-radius: $radius-sm;
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+
+    p {
+      color: $color-success;
+      font-weight: $font-weight-semibold;
+      margin-bottom: 0;
+    }
+  }
+
+  // BUG: small click target
+  &__submit {
+    padding: 2px 8px;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    font-size: 11px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}

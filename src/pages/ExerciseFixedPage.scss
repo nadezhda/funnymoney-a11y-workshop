@@ -1,0 +1,212 @@
+@use '../styles/tokens' as *;
+
+.exercise-fixed {
+  h1 {
+    margin-bottom: $spacing-lg;
+  }
+
+  // --- Dashboard sections ---
+  &__accounts,
+  &__actions,
+  &__notifications,
+  &__promotion,
+  &__activity,
+  &__transfer {
+    margin-bottom: $spacing-2xl;
+
+    > h3 {
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  // --- Table ---
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+
+    th,
+    td {
+      text-align: left;
+      padding: $spacing-sm $spacing-md;
+      border-bottom: 1px solid $color-border;
+    }
+
+    th {
+      background-color: $color-surface;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &__status {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+
+    &--active {
+      color: $color-success;
+    }
+
+    &--pending {
+      color: $color-accent;
+    }
+  }
+
+  // --- Quick actions — FIX: real buttons with focus styles ---
+  &__action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  &__action-btn {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-sm $spacing-lg;
+    border: none;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-primary-dark;
+      outline-offset: 2px;
+    }
+  }
+
+  // --- Notifications ---
+  &__notifications {
+    ul {
+      padding-left: $spacing-lg;
+    }
+
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // --- Promotion — FIX: responsive max-width, rem font size ---
+  &__promotion-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-lg;
+    max-width: 44rem;
+  }
+
+  &__promotion-img {
+    border-radius: $radius-sm;
+    flex-shrink: 0;
+  }
+
+  &__promotion-content {
+    flex: 1;
+    min-width: 0;
+
+    p {
+      margin-bottom: $spacing-md;
+      font-size: $font-size-sm;
+    }
+  }
+
+  // --- Transfer form ---
+  &__transfer {
+    max-width: 28rem;
+  }
+
+  &__field {
+    margin-bottom: $spacing-lg;
+
+    label {
+      display: block;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-xs;
+
+      span {
+        color: $color-error;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base;
+      border: 1px solid $color-gray-300;
+      border-radius: $radius-sm;
+      font-family: $font-family-base;
+
+      &[aria-invalid='true'] {
+        border-color: $color-error;
+      }
+    }
+  }
+
+  &__field-error {
+    color: $color-error;
+    font-size: $font-size-sm;
+    margin-top: $spacing-xs;
+  }
+
+  &__error-list {
+    background-color: $color-error-light;
+    border: 1px solid $color-error;
+    border-radius: $radius-sm;
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+
+    p {
+      margin-bottom: $spacing-sm;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $color-error;
+    }
+  }
+
+  &__success {
+    background-color: $color-success-light;
+    border: 1px solid $color-success;
+    border-radius: $radius-sm;
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+
+    p {
+      color: $color-success;
+      font-weight: $font-weight-semibold;
+      margin-bottom: 0;
+    }
+  }
+
+  // FIX: proper target size
+  &__submit {
+    padding: $spacing-sm $spacing-xl;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-primary-dark;
+      outline-offset: 2px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@use '../../styles/tokens' as *;
+
+.carousel {
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  overflow: hidden;
+  margin-top: $spacing-lg;
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-surface;
+    border-bottom: 1px solid $color-border;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  &__btn {
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    min-height: 2.5rem;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &__indicator {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    font-weight: $font-weight-medium;
+  }
+
+  &__slide {
+    padding: $spacing-xl $spacing-lg;
+
+    p {
+      color: $color-text-light;
+      margin-bottom: 0;
+    }
+  }
+
+  &__slide-title {
+    margin-top: 0;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__highlight {
+    display: inline-block;
+    background-color: $color-accent-light;
+    color: $color-accent-dark;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    border-top: 1px solid $color-border;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: $radius-full;
+    border: 2px solid $color-gray-400;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      border-color: $color-primary;
+    }
+
+    &--active {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}

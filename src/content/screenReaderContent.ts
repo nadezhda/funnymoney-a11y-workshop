@@ -218,7 +218,7 @@ export const screenReaderContent = {
     },
 
     tabs: {
-      heading: 'Custom widget — Tab panel',
+      heading: 'Custom widget: Tab panel',
       wcag: [wcag('4.1.2', 'Name, Role, Value', 'A')],
       descriptionStart: 'This tab panel follows the ',
       apgLinkText: 'ARIA Authoring Practices (APG) tabs pattern',

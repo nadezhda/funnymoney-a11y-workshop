@@ -4,7 +4,7 @@ export const exerciseFixedContent = {
     'This is the corrected version of the exercise page. All accessibility issues have been fixed. Use it as a reference to compare against the exercise page.',
 
   dashboard: {
-    greeting: 'Welcome back, Alex',
+    greeting: 'Welcome back, customer!',
     accountSummary: 'Account summary',
     accounts: [
       { name: 'Checking Account', balance: '€4,230.50', status: 'Active' },

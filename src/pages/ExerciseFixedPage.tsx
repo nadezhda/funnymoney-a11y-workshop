@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { exerciseFixedContent as content } from '../content/exerciseFixedContent';
 import goldImage from '../assets/gold.jpg';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './ExerciseFixedPage.scss';
 
 export function ExerciseFixedPage() {
+  usePageTitle('Exercise — Fixed Version');
   const { dashboard } = content;
   const [formData, setFormData] = useState({
     recipient: '',

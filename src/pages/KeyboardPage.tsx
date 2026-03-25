@@ -3,12 +3,13 @@ import {
   ExamplePair,
   PersonaList,
   TestChecklist,
-  WcagCriteria,
 } from '../components/workshop';
 import { keyboardContent as content } from '../content/keyboardContent';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './KeyboardPage.scss';
 
 export function KeyboardPage() {
+  usePageTitle('Keyboard Testing');
   const [disclosureOpen, setDisclosureOpen] = useState(false);
   const [badModalOpen, setBadModalOpen] = useState(false);
   const [goodModalOpen, setGoodModalOpen] = useState(false);
@@ -116,7 +117,6 @@ export function KeyboardPage() {
         <div className="keyboard-page__tip">
           <strong>Try it:</strong> {sections.skipLink.tip}
         </div>
-        <WcagCriteria criteria={sections.skipLink.wcag} />
       </section>
 
       {/* Focus Visibility */}
@@ -157,7 +157,6 @@ export function KeyboardPage() {
           incorrectExplanation={sections.focusVisibility.incorrectExplanation}
           correctExplanation={sections.focusVisibility.correctExplanation}
         />
-        <WcagCriteria criteria={sections.focusVisibility.wcag} />
       </section>
 
       {/* Mouse-Only Element */}
@@ -193,7 +192,6 @@ export function KeyboardPage() {
           incorrectExplanation={sections.mouseOnly.incorrectExplanation}
           correctExplanation={sections.mouseOnly.correctExplanation}
         />
-        <WcagCriteria criteria={sections.mouseOnly.wcag} />
       </section>
 
       {/* Form Demo */}
@@ -313,7 +311,6 @@ export function KeyboardPage() {
             </p>
           )}
         </form>
-        <WcagCriteria criteria={sections.form.wcag} />
       </section>
 
       {/* Disclosure Widget */}
@@ -322,7 +319,17 @@ export function KeyboardPage() {
         className="keyboard-page__section"
       >
         <h2 id="disclosure-heading">{sections.disclosure.heading}</h2>
-        <p>{sections.disclosure.description}</p>
+        <p>
+          {sections.disclosure.descriptionStart}
+          <a
+            href={sections.disclosure.apgLinkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {sections.disclosure.apgLinkText}
+          </a>
+          {sections.disclosure.descriptionEnd}
+        </p>
 
         <div className="keyboard-page__disclosure">
           <button
@@ -354,7 +361,6 @@ export function KeyboardPage() {
         <div className="keyboard-page__tip">
           <strong>How it works:</strong> {sections.disclosure.tip}
         </div>
-        <WcagCriteria criteria={sections.disclosure.wcag} />
       </section>
 
       {/* Focus Trap Demo */}
@@ -396,7 +402,7 @@ export function KeyboardPage() {
                     <p className="keyboard-page__trap-warning">
                       {sections.focusTrap.badWarning}
                     </p>
-                    <a href="#focus-trap-heading">
+                    <a href="#" onClick={(e) => e.preventDefault()}>
                       A link you cannot escape from
                     </a>
                   </div>
@@ -454,7 +460,6 @@ export function KeyboardPage() {
         <div className="keyboard-page__tip">
           <strong>Remember:</strong> {sections.focusTrap.tip}
         </div>
-        <WcagCriteria criteria={sections.focusTrap.wcag} />
       </section>
 
       {/* Non-interactive Focus Demo */}
@@ -503,7 +508,6 @@ export function KeyboardPage() {
           }
           correctExplanation={sections.nonInteractiveFocus.correctExplanation}
         />
-        <WcagCriteria criteria={sections.nonInteractiveFocus.wcag} />
       </section>
     </div>
   );

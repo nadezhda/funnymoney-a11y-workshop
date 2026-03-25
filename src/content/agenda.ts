@@ -2,11 +2,6 @@ import type { AgendaItem } from '../types';
 
 export const agendaItems: AgendaItem[] = [
   {
-    id: 'introduction',
-    title: 'Introduction',
-    description: 'What is accessibility and why it matters',
-  },
-  {
     id: 'personas',
     title: 'Meet the Personas',
     description: 'Understanding real user needs',

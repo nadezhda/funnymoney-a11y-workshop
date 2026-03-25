@@ -6,9 +6,11 @@ import {
   WcagCriteria,
 } from '../components/workshop';
 import { zoomContent as content } from '../content/zoomContent';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './ZoomPage.scss';
 
 export function ZoomPage() {
+  usePageTitle('Zoom & Reflow');
   const { sections } = content;
 
   return (

@@ -2,13 +2,14 @@ import { useState } from 'react';
 import {
   PersonaList,
   TestChecklist,
-  WcagCriteria,
 } from '../components/workshop';
 import { screenReaderContent as content } from '../content/screenReaderContent';
 import goldImage from '../assets/gold.jpg';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './ScreenReaderPage.scss';
 
 export function ScreenReaderPage() {
+  usePageTitle('Screen Reader Testing');
   const [activeTab, setActiveTab] = useState(0);
   const [notificationCount, setNotificationCount] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
@@ -158,7 +159,7 @@ export function ScreenReaderPage() {
         className="sr-page__section"
       >
         <h2 id="headings-nav-heading">{sections.headings.heading}</h2>
-        <WcagCriteria criteria={sections.headings.wcag} />
+
         <p>{sections.headings.description}</p>
         <div className="sr-page__key-reference">
           <ul>
@@ -177,7 +178,7 @@ export function ScreenReaderPage() {
       {/* 6. Navigating by Links */}
       <section aria-labelledby="links-heading" className="sr-page__section">
         <h2 id="links-heading">{sections.links.heading}</h2>
-        <WcagCriteria criteria={sections.links.wcag} />
+
         <p>{sections.links.description}</p>
         <div className="sr-page__key-reference">
           <ul>
@@ -229,7 +230,7 @@ export function ScreenReaderPage() {
       {/* 7. Navigating by Landmarks */}
       <section aria-labelledby="landmarks-heading" className="sr-page__section">
         <h2 id="landmarks-heading">{sections.landmarks.heading}</h2>
-        <WcagCriteria criteria={sections.landmarks.wcag} />
+
         <p>{sections.landmarks.description}</p>
         <div className="sr-page__key-reference">
           <ul>
@@ -265,7 +266,7 @@ export function ScreenReaderPage() {
       {/* 8. Images */}
       <section aria-labelledby="images-heading" className="sr-page__section">
         <h2 id="images-heading">{sections.images.heading}</h2>
-        <WcagCriteria criteria={sections.images.wcag} />
+
         <p>{sections.images.description}</p>
         <div className="sr-page__key-reference">
           <ul>
@@ -308,7 +309,7 @@ export function ScreenReaderPage() {
       {/* 9. Custom Widget - Tabs */}
       <section aria-labelledby="tabs-heading" className="sr-page__section">
         <h2 id="tabs-heading">{sections.tabs.heading}</h2>
-        <WcagCriteria criteria={sections.tabs.wcag} />
+
         <p>
           {sections.tabs.descriptionStart}
           <a
@@ -344,12 +345,21 @@ export function ScreenReaderPage() {
                 className={`sr-page__tab${activeTab === index ? ' sr-page__tab--active' : ''}`}
                 onClick={() => setActiveTab(index)}
                 onKeyDown={(e) => {
+                  let newIndex: number | null = null;
                   if (e.key === 'ArrowRight') {
-                    setActiveTab((prev) => (prev + 1) % tabData.length);
+                    newIndex = (index + 1) % tabData.length;
                   } else if (e.key === 'ArrowLeft') {
-                    setActiveTab(
-                      (prev) => (prev - 1 + tabData.length) % tabData.length,
-                    );
+                    newIndex = (index - 1 + tabData.length) % tabData.length;
+                  } else if (e.key === 'Home') {
+                    newIndex = 0;
+                  } else if (e.key === 'End') {
+                    newIndex = tabData.length - 1;
+                  }
+                  if (newIndex !== null) {
+                    e.preventDefault();
+                    setActiveTab(newIndex);
+                    const newTab = document.getElementById(`tab-${newIndex}`);
+                    newTab?.focus();
                   }
                 }}
               >
@@ -408,7 +418,7 @@ export function ScreenReaderPage() {
       {/* 10. Dynamic Content - Live Region */}
       <section aria-labelledby="live-heading" className="sr-page__section">
         <h2 id="live-heading">{sections.liveRegions.heading}</h2>
-        <WcagCriteria criteria={sections.liveRegions.wcag} />
+
         <p>{sections.liveRegions.description}</p>
         <p>{sections.liveRegions.descriptionExample}</p>
 
@@ -438,7 +448,7 @@ export function ScreenReaderPage() {
       {/* 11. Form with Error Feedback */}
       <section aria-labelledby="form-heading" className="sr-page__section">
         <h2 id="form-heading">{sections.form.heading}</h2>
-        <WcagCriteria criteria={sections.form.wcag} />
+
         <p>{sections.form.description}</p>
 
         <div className="sr-page__key-reference">

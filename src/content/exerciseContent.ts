@@ -49,7 +49,7 @@ export const exerciseContent = {
 
   // --- Dashboard content with intentional a11y issues ---
   dashboard: {
-    greeting: 'Welcome back, Alex',
+    greeting: 'Welcome back, customers!',
     accountSummary: 'Account summary',
     accounts: [
       { name: 'Checking Account', balance: '€4,230.50', status: 'Active' },

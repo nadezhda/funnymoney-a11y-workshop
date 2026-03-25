@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { exerciseContent as content } from '../content/exerciseContent';
 import goldImage from '../assets/gold.jpg';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './ExercisePage.scss';
 
 export function ExercisePage() {
+  usePageTitle('Hands-on Exercise');
   const { dashboard } = content;
   const [formData, setFormData] = useState({
     recipient: '',

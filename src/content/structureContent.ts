@@ -9,7 +9,7 @@ function wcag(id: string, name: string, level: WcagLevel): WcagCriterion {
 export const structureContent = {
   title: 'Document Structure & Semantics',
   intro:
-    'Semantic HTML provides meaning and structure that assistive technologies rely on. Automated testing tools can detect many structural issues — use this page to practice scanning with tools like axe DevTools or WAVE.',
+    'Semantic HTML provides meaning and structure that assistive technologies rely on. Automated testing tools can detect many structural issues. We can use this page to practice scanning with tools like axe DevTools or WAVE.',
   personaIds: ['felicia', 'emma', 'patrik'],
 
   sections: {
@@ -108,7 +108,7 @@ export const structureContent = {
     accordion: {
       heading: 'Example: Accordion with aria-expanded',
       description:
-        'Accordion components use aria-expanded to communicate whether a section is open or closed. Screen readers announce "expanded" or "collapsed" when the button is focused.',
+        'Accordion components use aria-expanded to communicate whether a section is open or closed. Screen readers announce "expanded" or "collapsed" when interacting with the button.',
       items: [
         {
           id: 'faq-1',

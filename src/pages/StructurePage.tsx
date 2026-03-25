@@ -7,9 +7,11 @@ import {
 } from '../components/workshop';
 import { structureContent as content } from '../content/structureContent';
 import piggyBankImg from '../assets/qd567erfyiigq.jpg';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './StructurePage.scss';
 
 export function StructurePage() {
+  usePageTitle('Document Structure');
   const [faqOpen, setFaqOpen] = useState<Record<string, boolean>>({});
 
   const toggleFaq = (id: string) => {

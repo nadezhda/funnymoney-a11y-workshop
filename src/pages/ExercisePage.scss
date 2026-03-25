@@ -181,9 +181,9 @@
       border-radius: $radius-sm;
       font-family: $font-family-base;
 
-      // BUG: focus outline removed
+      // BUG: low contrast focus outline
       &:focus {
-        outline: none;
+        outline: 2px solid #d0d0d0;
       }
     }
   }

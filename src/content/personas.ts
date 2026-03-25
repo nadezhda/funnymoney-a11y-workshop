@@ -38,12 +38,7 @@ export const personas: Persona[] = [
     image: oliverImg,
     summary: 'Struggles with poor contrast and unresponsive content.',
     disability: 'Low vision',
-    tools: [
-      'Enlarged text',
-      'Browser zoom (up to 400%)',
-      'High contrast mode',
-      'Screen magnifier, i.e. ZoomText',
-    ],
+    tools: ['Enlarged text', 'Browser zoom (up to 400%)', 'High contrast mode'],
     goals: [
       'Read text comfortably at larger sizes',
       'Using interfaces without overlapping when zoomed',
@@ -54,7 +49,6 @@ export const personas: Persona[] = [
       'Low-contrast text and focus indicators',
       'Content that breaks or overlaps when zoomed',
       'Fixed-size layouts that cause horizontal scrolling',
-      'Small touch targets that are hard to activate',
     ],
     solutions: [
       'Text sized in relative units that respects browser settings',
@@ -100,10 +94,9 @@ export const personas: Persona[] = [
     id: 'patrik',
     name: 'Patrik',
     image: patrikImg,
-    summary: 'Uses zoom, magnifier, and keyboard instead of a mouse.',
-    disability: 'Low vision and rheumatoid arthritis',
+    summary: 'Uses magnification together with keyboard instead of a mouse.',
+    disability: 'Low vision, rheumatoid arthritis and tremors',
     tools: [
-      'Browser zoom (up to 400%)',
       'Screen magnifier',
       'Keyboard with the wrist support',
       'Keyboard shortcuts and assistive software for key remapping',
@@ -122,7 +115,7 @@ export const personas: Persona[] = [
       'Small touch targets and cramped spacing',
     ],
     solutions: [
-      'Text sized in relative () units that respects browser settings',
+      'Text sized in relative units that respects browser settings',
       'All interactive elements reachable by keyboard',
       'Layout that reflows into a single column at high zoom',
       'Adequate spacing and target sizes',

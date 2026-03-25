@@ -51,7 +51,7 @@ export const zoomContent = {
       carousel: {
         exampleTitle: 'Custom widget at 400% zoom',
         description:
-          'Carousels are common UI patterns that often break at high zoom levels. This carousel is built to remain usable at 400% zoom — content reflows, controls are reachable, and no information is cut off.',
+          'Carousels are common UI patterns that often break at high zoom levels. This carousel is built to remain usable at 400% zoom: content reflows, controls are reachable, and no information is cut off.',
         regionLabel: 'FunnyMoney product offers',
         slides: [
           {

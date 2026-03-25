@@ -1,9 +1,11 @@
 import { branding } from '../config/branding';
 import { AgendaList } from '../components/workshop';
 import { PersonaList } from '../components/workshop';
+import { usePageTitle } from '../hooks/usePageTitle';
 import './HomePage.scss';
 
 export function HomePage() {
+  usePageTitle();
   return (
     <div className="home-page">
       <section className="home-page__hero">
@@ -19,16 +21,38 @@ export function HomePage() {
           fix common accessibility issues in web applications.
         </p>
         <p>
-          We will use a fictional banking portal as our testing ground. You will
-          work with real tools — keyboard, screen reader, browser zoom, and
-          automated testing tools — to discover barriers that prevent people
-          from using the web.
+          We will use a fictional banking portal as our testing playground. We
+          will test with tools such as keyboard, screen reader, browser zoom,
+          and automated testing tools — to discover barriers that prevent people
+          from using the web .
         </p>
       </section>
 
       <section className="home-page__agenda" aria-labelledby="agenda-heading">
         <h2 id="agenda-heading">Workshop agenda</h2>
         <AgendaList />
+      </section>
+
+      <section className="home-page__tools" aria-labelledby="tools-heading">
+        <h2 id="tools-heading">Tools we will use</h2>
+        <ul className="home-page__tools-list">
+          <li>
+            <strong>WAVE</strong> — browser extension for visual accessibility
+            feedback
+          </li>
+          <li>
+            <strong>Accessibility Insights for Web</strong> — browser extension
+            for guided accessibility testing
+          </li>
+          <li>
+            <strong>axe DevTools</strong> — browser extension for automated
+            accessibility checks
+          </li>
+          <li>
+            <strong>Target size bookmarklet</strong> — highlights interactive
+            elements and checks their target size
+          </li>
+        </ul>
       </section>
 
       <section

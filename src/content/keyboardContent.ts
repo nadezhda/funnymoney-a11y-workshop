@@ -28,6 +28,7 @@ export const keyboardContent = {
       'Repetitive content can be bypassed with skip links',
       'The tab order is logical and follows the visual layout',
       'Keyboard focus remains visible at all times',
+      'Keyboard focus indicator has sufficient contrast ratio against the background',
       'Buttons work with Enter and Space keys',
       'Select menus and dropdowns work with the keyboard only',
       'Radio buttons groups are navigable with Arrow keys',
@@ -128,8 +129,12 @@ export const keyboardContent = {
 
     disclosure: {
       heading: 'Example: Custom widgets',
-      description:
-        'Custom interactive widgets must accessible to keyboard users. The ARIA Authoring Practices (APG) outlines necessary keyboard interactions and ARIA attributes necessary for many types of custom widgets. A disclosure widget here is an example of custom component that shows and hides content. It must respond to Enter and Space.',
+      descriptionStart:
+        'Custom interactive widgets must be accessible to keyboard users. The ',
+      apgLinkText: 'ARIA Authoring Practices (APG)',
+      apgLinkUrl: 'https://www.w3.org/WAI/ARIA/apg/patterns/',
+      descriptionEnd:
+        ' outlines necessary keyboard interactions and ARIA attributes necessary for many types of custom widgets. A disclosure widget here is an example of custom component that shows and hides content. It must respond to Enter and Space.',
       triggerLabel: 'Account security information',
       content:
         'Your FunnyMoney Bank account is protected with two-factor authentication (2FA). We recommend enabling biometric login for faster access.',
@@ -172,7 +177,7 @@ export const keyboardContent = {
     nonInteractiveFocus: {
       heading: 'Example: Non-interactive elements in focus order',
       description:
-        'Only interactive elements (links, buttons, form controls, etc.) should be get a focus. Adding tabindex="0" to non-interactive elements like paragraphs, headings, or divs creates unnecessary stops that slow down keyboard users and confuse screen readers. Programmatic focus (tabindex="-1") is acceptable when needed, for example to move focus to an error summary or a newly loaded section.',
+        'Only interactive elements (links, buttons, form controls, etc.) should get a keyboard focus. Adding tabindex="0" to non-interactive elements like paragraphs, headings, or divs creates unnecessary stops that slow down keyboard users and confuse screen readers. Programmatic focus (tabindex="-1") is acceptable when needed, for example to move focus to an error summary or a newly loaded section.',
       incorrectExplanation:
         'These non-interactive elements have tabindex="0", making them part of the focus order. Keyboard users must navigate through them to reach the actual interactive elements below. It is not expected behavior and can be confusing.',
       correctExplanation:

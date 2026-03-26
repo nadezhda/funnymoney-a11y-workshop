@@ -3,11 +3,12 @@ export const exerciseContent = {
   intro:
     'This page is a simplified FunnyMoney account dashboard. It contains accessibility issues from each category covered in the workshop. Your task is to find as many issues as you can using automated tools and manual testing.',
   instructions: [
-    'Run an automated accessibility checker (e.g. axe DevTools) and note the issues it finds.',
-    'Test with keyboard only — can you reach and operate every interactive element?',
-    'Check document structure — headings, landmarks, and semantic HTML.',
-    'Test with a screen reader — are all elements announced meaningfully?',
-    'Zoom to 400% — does the layout reflow without horizontal scrolling?',
+    'Run an automated accessibility checkers (e.g. axe DevTools, WAVE) and note the issues it finds.',
+    'Test with keyboard only. Can you reach and operate every interactive element?',
+    'Check document structure: headings, landmarks, and semantic HTML',
+    'Test with a screen reader. Are all elements announced meaningfully?',
+    'Does all text resize properly?',
+    'Zoom to 400% with screen 1280 CSS px. Does the layout reflow without horizontal scrolling?',
   ],
   hintsHeading: 'Hints',
   hintsIntro:
